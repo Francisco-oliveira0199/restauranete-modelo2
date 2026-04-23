@@ -1,0 +1,258 @@
+:root {
+    --primary-color: #f59e0b;
+    --primary-light: #fcd34d;
+    --text-dark: #1f2937;
+    --text-medium: #6B7280;
+    --white: #ffffff;
+    --overlay: rgba(0, 0, 0, 0.4);
+    --green: #16a34a;
+}
+
+/* ================= BASE ================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f9fafb;
+}
+
+/* ================= HERO ================= */
+.container {
+    margin-top: 70px;
+    position: relative;
+    height: 350px;
+    background: url('../imagens/IMG_20260330_183424.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--overlay);
+}
+
+.content {
+    position: relative;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ================= BOTÕES ================= */
+.btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-tel {
+    background: white;
+    color: var(--primary-color);
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-whatsapp {
+    background: var(--green);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* ================= MAIN ================= */
+.main {
+    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.titulo {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.sub-titulo {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.texto {
+    color: var(--text-medium);
+    font-size: 14px;
+}
+
+/* BLOCO */
+.bloco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon i {
+    background: var(--primary-light);
+    color: var(--primary-color);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= DESTAQUES ================= */
+.destaques {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    text-align: center;
+}
+
+/* CARROSSEL */
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.destaque-item {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px; /* espaço pra sombra aparecer */
+}
+
+/* IMAGEM */
+.img-box {
+    height: 280px;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CARD */
+.card-info {
+    margin-top: -25px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 6px 16px rgba(107,114,128,0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+/* TITULO COM ICON */
+.titulo-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.titulo-card i {
+    color: var(--primary-color);
+}
+
+/* BOTÕES CARROSSEL */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* INDICADORES */
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.indicadores div {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.indicadores .ativo {
+    background: var(--primary-color);
+}
+
+/* BOTÃO CENTRAL */
+.center {
+    display: block;
+    margin: 20px auto;
+}
+
+/* ================= CONTATO ================= */
+.contato {
+    background: var(--primary-color);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.botoes-contato {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ================= RESPONSIVO ================= */
+@media (max-width: 768px) {
+    .img-box {
+        height: 200px;
+    }
+
+    .prev { left: 5px; }
+    .next { right: 5px; }
+
+    .botoes-contato {
+        flex-direction: column;
+    }
+
+    .botoes-contato button {
+        width: 100%;
+    }
+}

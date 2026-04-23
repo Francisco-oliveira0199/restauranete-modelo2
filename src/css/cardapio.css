@@ -1,0 +1,393 @@
+:root {
+    --primary-color: #f59e0b;
+    --primary-light: #fcd34d;
+    --text-dark: #1f2937;
+    --text-medium: #6B7280;
+    --white: #ffffff;
+    --green: #16a34a;
+}
+
+/* ================= BASE ================= */
+html {
+    scroll-behavior: smooth;
+}
+
+.cardapio {
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+}
+
+.cardapio h1 {
+    margin-bottom: 10px;
+}
+
+.sub {
+    margin-bottom: 25px;
+    color: var(--text-medium);
+}
+
+/* ================= CATEGORIAS ================= */
+.categorias {
+    margin: 20px 0;
+}
+
+.linha-topo,
+.linha-baixo {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.categoria-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: 100%;
+    max-width: 280px;
+
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+
+    background: #f3f4f6;
+    color: black;
+    cursor: pointer;
+}
+
+.categoria-btn i {
+    color: var(--primary-color);
+}
+
+.categoria-btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.categoria-btn.active i {
+    color: white;
+}
+
+/* ================= CONTAINER ================= */
+.cardapio-container {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* ================= CATEGORIA ================= */
+.categoria {
+    display: none;
+}
+
+.categoria.active {
+    display: block;
+}
+
+/* HEADER */
+.categoria-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.categoria-header i {
+    color: var(--primary-color);
+}
+
+/* ================= ITEM ================= */
+.item {
+    background: var(--white);
+    padding: 20px;
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+}
+
+.item .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item p {
+    margin-top: 10px;
+    text-align: left;
+    color: var(--text-medium);
+}
+
+.item span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ================= MODAL ================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: 95%;
+    max-width: 430px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    position: relative;
+
+}
+
+/* X FECHAR */
+.fechar-x {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    z-index: 10;
+}
+
+/* ================= ENTREGA ================= */
+
+/* TOPO */
+.resumo-pedido {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+.resumo-pedido span {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.resumo-pedido h2 {
+    margin-top: 10px;
+}
+
+.resumo-pedido p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* PARTE BRANCA */
+.resumo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.resumo h3 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.resumo span {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.resumo input {
+    margin-top: 5px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* BOTÃO */
+.btn {
+    margin-top: 20px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--primary-color);
+    color: white;
+
+    cursor: pointer;
+
+    width: 100%;
+}
+
+/* ================= PAGAMENTO ================= */
+
+/* TOPO */
+.resumo-topo {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px;
+}
+
+.resumo-topo span {
+    font-size: 14px;
+}
+
+.resumo-topo h2 {
+    margin-top: 10px;
+}
+
+.resumo-topo p {
+    font-weight: 600;
+}
+
+/* CONTEÚDO */
+.pagamento-conteudo {
+    padding: 20px;
+}
+
+/* ENDEREÇO */
+.endereco-box {
+    background: #f3f4f6;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.endereco-header {
+    margin-bottom: 8px;
+}
+
+.endereco-dados {
+    text-align: right;
+}
+
+/* TITULO */
+.pagamento-titulo {
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+.pagamento-conteudo {
+    padding: 20px;
+}
+
+/* 🔥 MESMA LARGURA DO ENDEREÇO */
+.endereco-box,
+.pagamento-cards {
+    width: 100%;
+}
+
+/* CARDS */
+.pagamento-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.pag-card {
+    width: 100%; /* 🔥 força largura total */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.pag-card.active {
+    border: 2px solid var(--primary-color);
+}
+
+/* ICON */
+.icon-circle {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    background: var(--primary-light);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--primary-color);
+}
+
+/* ================= CONTATOS ================= */
+.contatos {
+    max-width: 550px;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-contato {
+    width: 100%;
+    padding: 14px;
+
+    border-radius: 12px;
+    border: none;
+
+    color: white;
+    font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+.btn-contato.tel {
+    background: var(--primary-color);
+}
+
+.btn-contato.whats {
+    background: var(--green);
+}
+
+/* EDITAR ENDEREÇO */
+.editar-endereco {
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ENDEREÇO */
+.endereco-dados {
+    text-align: left; /* 🔥 agora fica na esquerda */
+    margin-top: 5px;
+}
+
+.endereco-dados p:first-child {
+    font-weight: 500;
+}
+
+.endereco-dados p:last-child {
+    color: var(--text-medium);
+}
