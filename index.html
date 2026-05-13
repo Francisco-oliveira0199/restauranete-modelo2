@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="./src/css/header.css">
 <link rel="stylesheet" href="./src/css/footer.css">
 <link rel="stylesheet" href="./src/css/style.css">
+<link rel="stylesheet" href="./src/css/destaques.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,6 +19,7 @@
 <body>
 
 <header class="header">
+
   <div class="logo">
     <div class="logo-icon">
       <i class="fa-solid fa-utensils"></i>
@@ -25,11 +27,17 @@
     <span class="logo-text">Sabor & Cia</span>
   </div>
 
-  <nav class="menu">
+  <div class="header-right">
     <button class="menu-icon">
       <i class="fa-solid fa-bars"></i>
     </button>
-  </nav>
+
+    <button id="btnCarrinho">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="badgeCarrinho" class="badge">0</span>
+    </button>
+  </div>
+
 </header>
 
 <div class="menu-links">
@@ -126,7 +134,7 @@
 
 <div class="destaque-item" onclick="irCategoria('bebidas')">
   <div class="img-box">
-    <img src="./src/imagens/bebidas.png">
+    <img src="./src/imagens/IMG_20260330_182816.png">
   </div>
 
   <div class="card-info">
@@ -184,6 +192,7 @@
 </footer>
 
 <script src="./src/js/index.js"></script>
+<script src="./src/js/menu.js"></script>
 
 </body>
 </html>

@@ -30,3 +30,10 @@
     font-size: 13px;
     color: var(--text-medium);
 }
+
+.footer p,
+.footer h2,
+.footer h3 {
+    margin: 0;
+    line-height: 1.4;
+}

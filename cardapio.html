@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="./src/css/header.css">
 <link rel="stylesheet" href="./src/css/footer.css">
 <link rel="stylesheet" href="./src/css/cardapio.css">
+<link rel="stylesheet" href="./src/css/modal.css">
+<link rel="stylesheet" href="./src/css/carrinho.css">
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +19,7 @@
 <body>
 
 <header class="header">
+
   <div class="logo">
     <div class="logo-icon">
       <i class="fa-solid fa-utensils"></i>
@@ -24,12 +27,18 @@
     <span class="logo-text">Sabor & Cia</span>
   </div>
 
-  <nav class="menu">
+  <div class="header-right">
     <button class="menu-icon">
       <i class="fa-solid fa-bars"></i>
     </button>
-  </nav>
+
+    <button id="btnCarrinho">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="badgeCarrinho" class="badge">0</span>
+    </button>
+  </div>
 </header>
+ 
 
 <div class="menu-links">
   <a href="index.html">Início</a>
@@ -90,51 +99,100 @@
 </div>
 
 <div class="item" data-nome="Pizza margherita" data-preco="45">
-<div class="top">
+<div class="item-info">
 <h3>Margherita</h3>
-<span>R$ 45,00</span>
-</div>
 <p>Molho de tomate, mussarela e manjericão</p>
 </div>
 
-<div class="item" data-nome="Pizza calabresa" data-preco="48">
-<div class="top">
-<h3>Calabresa</h3>
-<span>R$ 48,00</span>
+<div class="item-side">
+<span>R$ 45,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+
+<div class="item" data-nome="Pizza calabresa" data-preco="48">
+<div class="item-info">
+<h3>Calabresa</h3>
 <p>Molho de tomate, mussarela, calabresa e cebola</p>
 </div>
 
-<div class="item" data-nome="Pizza quatro queijos" data-preco="52">
-<div class="top">
-<h3>Quatro Queijos</h3>
-<span>R$ 52,00</span>
+<div class="item-side">
+<span>R$ 48,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pizza quatro queijos" data-preco="52">
+<div class="item-info">
+<h3>Quatro Queijos</h3>
 <p>Mussarela, parmesão, gorgonzola e provolone</p>
 </div>
 
-<div class="item" data-nome="Pizza portuguesa" data-preco="50">
-<div class="top">
-<h3>Portuguesa</h3>
-<span>R$ 50,00</span>
+<div class="item-side">
+<span>R$ 52,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pizza portuguesa" data-preco="50">
+<div class="item-info">
+<h3>Portuguesa</h3>
 <p>Presunto, ovos, cebola, azeitona e ervilha</p>
 </div>
 
-<div class="item" data-nome="Pizza de frango com catupiry" data-preco="49">
-<div class="top">
-<h3>Frango com Catupiry</h3>
-<span>R$ 49,00</span>
+<div class="item-side">
+<span>R$ 50,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pizza de frango com catupiry" data-preco="49">
+<div class="item-info">
+<h3>Frango com Catupiry</h3>
 <p>Frango desfiado com catupiry</p>
 </div>
 
-<div class="item" data-nome="Pizza de pepperoni" data-preco="52">
-<div class="top">
-<h3>Pepperoni</h3>
-<span>R$ 52,00</span>
+<div class="item-side">
+<span>R$ 49,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pizza de pepperoni" data-preco="52">
+<div class="item-info">
+<h3>Pepperoni</h3>
 <p>Molho de tomate, mussarela e pepperoni</p>
+</div>
+
+<div class="item-side">
+<span>R$ 52,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
+</div>
+
 </div>
 
 </div>
@@ -148,51 +206,99 @@
 </div>
 
 <div class="item" data-nome="Pastel de carne" data-preco="8">
-<div class="top">
+<div class="item-info">
 <h3>Pastel de Carne</h3>
-<span>R$ 8,00</span>
-</div>
 <p>Carne moída temperada</p>
 </div>
 
-<div class="item" data-nome="Pastel de queijo" data-preco="7">
-<div class="top">
-<h3>Pastel de Queijo</h3>
-<span>R$ 7,00</span>
+<div class="item-side">
+<span>R$ 8,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pastel de queijo" data-preco="7">
+<div class="item-info">
+<h3>Pastel de Queijo</h3>
 <p>Mussarela derretida</p>
 </div>
 
-<div class="item" data-nome="Pastel-Pizza" data-preco="9">
-<div class="top">
-<h3>Pastel de Pizza</h3>
-<span>R$ 9,00</span>
+<div class="item-side">
+<span>R$ 7,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pastel-Pizza" data-preco="9">
+<div class="item-info">
+<h3>Pastel de Pizza</h3>
 <p>Presunto, mussarela e orégano</p>
 </div>
 
-<div class="item" data-nome="Pastel de frango com catupiry" data-preco="10">
-<div class="top">
-<h3>Pastel de Frango</h3>
-<span>R$ 10,00</span>
+<div class="item-side">
+<span>R$ 9,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pastel de frango com catupiry" data-preco="10">
+<div class="item-info">
+<h3>Pastel de Frango</h3>
 <p>Frango desfiado com catupiry</p>
 </div>
 
-<div class="item" data-nome="Pastel de palmito" data-preco="11">
-<div class="top">
-<h3>Pastel de Palmito</h3>
-<span>R$ 11,00</span>
+<div class="item-side">
+<span>R$ 10,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pastel de palmito" data-preco="11">
+<div class="item-info">
+<h3>Pastel de Palmito</h3>
 <p>Palmito e mussarela</p>
 </div>
 
-<div class="item" data-nome="Pastel de carne com queijo" data-preco="10">
-<div class="top">
-<h3>Pastel de Carne com Queijo</h3>
-<span>R$ 10,00</span>
+<div class="item-side">
+<span>R$ 11,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Pastel de carne com queijo" data-preco="10">
+<div class="item-info">
+<h3>Pastel de Carne com Queijo</h3>
 <p>Carne moída temperada com mussarela</p>
+</div>
+
+<div class="item-side">
+<span>R$ 10,00</span>
+<button class="btn-carrinho">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Adicionar
+  </button>
+</div>
+
 </div>
 
 </div>
@@ -206,51 +312,97 @@
 </div>
 
 <div class="item" data-nome="X-Burger" data-preco="20">
-<div class="top">
+<div class="item-info">
 <h3>X-Burger</h3>
-<span>R$ 20,00</span>
-</div>
 <p>Hambúrguer, queijo, alface, pão, tomate e maionese</p>
 </div>
 
-<div class="item" data-nome="X-Salada" data-preco="28">
-<div class="top">
-<h3>X-Salada</h3>
-<span>R$ 28,00</span>
+<div class="item-side">
+  <span>R$ 20,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="X-Salada" data-preco="28">
+<div class="item-info">
+<h3>X-Salada</h3>
 <p>Hambúrguer, queijo, presunto, alface, tomate e milho</p>
 </div>
 
-<div class="item" data-nome="X-Bacon" data-preco="32">
-<div class="top">
-<h3>X-Bacon</h3>
-<span>R$ 32,00</span>
+<div class="item-side">
+  <span>R$ 28,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="X-Bacon" data-preco="32">
+<div class="item-info">
+<h3>X-Bacon</h3>
 <p>Hambúrguer, queijo, bacon crocante e molho especial</p>
 </div>
 
-<div class="item" data-nome="X-Egg" data-preco="30">
-<div class="top">
-<h3>X-Egg</h3>
-<span>R$ 30,00</span>
+<div class="item-side">
+  <span>R$ 32,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="X-Egg" data-preco="30">
+<div class="item-info">
+<h3>X-Egg</h3>
 <p>Hambúrguer, queijo, ovo, bacon e maionese</p>
 </div>
 
-<div class="item" data-nome="X-Tudo" data-preco="38">
-<div class="top">
-<h3>X-Tudo</h3>
-<span>R$ 38,00</span>
+<div class="item-side">
+<span>R$ 30,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+</div>
+
+<div class="item" data-nome="X-Tudo" data-preco="38">
+<div class="item-info">
+<h3>X-Tudo</h3>
 <p>Duplo hambúrguer, queijo, bacon, ovo, calabresa e salada</p>
 </div>
 
-<div class="item" data-nome="Smash Burguer" data-preco="35">
-<div class="top">
-<h3>Smash Burguer</h3>
-<span>R$ 35,00</span>
+<div class="item-side">
+  <span>R$ 38,00</span>
+  <button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+</div>
+
+<div class="item" data-nome="Smash Burguer" data-preco="35">
+<div class="item-info">
+<h3>Smash Burguer</h3>
 <p>Duplo smash, queijo cheddar, cebola caramelizada e molho</p>
+</div>
+
+<div class="item-side">
+<span>R$ 35,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
+</div>
+
 </div>
 
 
@@ -265,43 +417,83 @@
 </div>
 
 <div class="item" data-nome="Suco de laranja" data-preco="8">
-<div class="top">
+<div class="item-info">
 <h3>Suco de Laranja</h3>
-<span>R$ 8,00</span>
-</div>
 <p>Suco natural de laranja - 500ml</p>
 </div>
 
-<div class="item" data-nome="Suco de limão" data-preco="8">
-<div class="top">
-<h3>Suco de Limão</h3>
+<div class="item-side">
 <span>R$ 8,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Suco de limão" data-preco="8">
+<div class="item-info">
+<h3>Suco de Limão</h3>
 <p>Suco natural de limão - 500ml</p>
 </div>
 
-<div class="item" data-nome="Suco de maracuja" data-preco="8">
-<div class="top">
-<h3>Suco de Maracujá</h3>
+<div class="item-side">
 <span>R$ 8,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Suco de maracuja" data-preco="8">
+<div class="item-info">
+<h3>Suco de Maracujá</h3>
 <p>Suco natural de maracujá - 500ml</p>
 </div>
 
-<div class="item" data-nome="Suco de abacaxi" data-preco="8">
-<div class="top">
-<h3>Suco de Abacaxi</h3>
-<span>R$ 8,00</span>
+<div class="item-side">
+  <span>R$ 8,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Suco de abacaxi" data-preco="8">
+<div class="item-info">
+<h3>Suco de Abacaxi</h3>
 <p>Suco natural de abacaxi - 500ml</p>
 </div>
 
-<div class="item" data-nome="Suco de melancia" data-preco="8">
-<div class="top">
-<h3>Suco de Melancia</h3>
+<div class="item-side">
 <span>R$ 8,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Suco de melancia" data-preco="8">
+<div class="item-info">
+<h3>Suco de Melancia</h3>
 <p>Suco natural de melancia - 500ml</p>
+</div>
+
+<div class="item-side">
+<span>R$ 8,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
+</div>
+
 </div>
 
 </div>
@@ -315,43 +507,81 @@
 </div>
 
 <div class="item" data-nome="Coca-Cola lata" data-preco="6">
-<div class="top">
+<div class="item-info">
 <h3>Coca-Cola Lata</h3>
-<span>R$ 6,00</span>
-</div>
 <p>350ml</p>
+</div>
+
+<div class="item-side">
+  <span>R$ 6,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
+</div>
+
 </div>
 
 <div class="item" data-nome="Coca-Cola 1L" data-preco="10">
-<div class="top">
+<div class="item-info">
 <h3>Coca-Cola</h3>
-<span>R$ 10,00</span>
-</div>
 <p>1 Litro</p>
+</div>
+<div class="item-side">
+  <span>R$ 10,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
+</div>
+
 </div>
 
 <div class="item" data-nome="Guaraná Antartica lata" data-preco="6">
-<div class="top">
+<div class="item-info">
 <h3>Guaraná Antartica Lata</h3>
-<span>R$ 6,00</span>
-</div>
 <p>350ml</p>
+</div>
+
+<div class="item-side">
+  <span>R$ 6,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
+</div>
+
 </div>
 
 <div class="item" data-nome="Fanta laranja" data-preco="6">
-<div class="top">
+<div class="item-info">
 <h3>Fanta Laranja</h3>
-<span>R$ 6,00</span>
-</div>
 <p>350ml</p>
 </div>
 
-<div class="item" data-nome="Agua mineral" data-preco="4">
-<div class="top">
-<h3>Água Mineral</h3>
-<span>R$ 4,00</span>
+<div class="item-side">
+<span>R$ 6,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
 </div>
+
+</div>
+
+<div class="item" data-nome="Agua mineral" data-preco="4">
+<div class="item-info">
+<h3>Água Mineral</h3>
 <p>500ml</p>
+</div>
+<div class="item-side">
+  <span>R$ 4,00</span>
+<button class="btn-carrinho">
+  <i class="fa-solid fa-cart-shopping"></i>
+  Adicionar
+</button>
+</div>
+
 </div>
 
 </div>
@@ -361,150 +591,8 @@
 
 </main>
 
-<div class="modal" id="modalPedido">
-
-  <div class="modal-box">
-
-    <!-- HEADER -->
-    <div class="modal-header">
-      <h2 id="modalTitulo">Informações de Entrega</h2>
-      <button class="close" onclick="fecharModal()">×</button>
-
-      <p id="nomeItem">Produto</p>
-      <span id="precoItem">R$ 0,00</span>
-    </div>
-
-    <!-- ENTREGA -->
-    <div class="etapa active" id="etapaEntrega">
-
-      <input type="text" placeholder="Bairro *" id="bairro">
-      <input type="text" placeholder="Rua *" id="rua">
-      <input type="text" placeholder="Número *" id="numero">
-      <input type="text" placeholder="Complemento" id="complemento">
-
-      <button class="btn-main" onclick="irParaPagamento()">
-        Continuar para Pagamento
-      </button>
-
-    </div>
-
-    <!-- PAGAMENTO -->
-    <div class="etapa" id="etapaPagamento">
-
-      <div class="resumo-endereco">
-        <strong>Entrega em:</strong>
-        <span id="resumoEndereco"></span>
-        <button onclick="voltarEntrega()">Editar</button>
-      </div>
-
-      <h3>Forma de pagamento</h3>
-
-      <div class="opcoes-pagamento">
-
-        <div class="opcao" data-pag="pix">
-          <i class="fa-solid fa-qrcode"></i>
-          <div>
-            <strong>Pix</strong>
-            <span>Pagamento instantâneo</span>
-          </div>
-        </div>
-
-        <div class="opcao" data-pag="dinheiro">
-          <i class="fa-solid fa-money-bill"></i>
-          <div>
-            <strong>Dinheiro</strong>
-            <span>Pagamento em espécie</span>
-          </div>
-        </div>
-
-        <div class="opcao" data-pag="cartao">
-          <i class="fa-solid fa-credit-card"></i>
-          <div>
-            <strong>Cartão</strong>
-            <span>Crédito ou Débito</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- DINHEIRO -->
-      <div class="dinheiro-box hidden" id="dinheiroBox">
-
-        <label class="check">
-          <input type="checkbox" id="precisaTroco">
-          Precisa de troco?
-        </label>
-
-        <input type="number" id="valorTroco" placeholder="Troco para quanto?" class="hidden">
-
-        <button class="btn-confirmar" onclick="confirmarPagamento()">
-          Confirmar Pedido
-        </button>
-
-      </div>
-
-      <!-- CARTÃO -->
-      <div class="cartao-box hidden" id="cartaoBox">
-
-        <input type="text" placeholder="Nome no cartão">
-        <input type="text" placeholder="Número do cartão">
-        <input type="text" placeholder="Validade (MM/AA)">
-        <input type="text" placeholder="CVV">
-
-        <button class="btn-confirmar" onclick="confirmarPagamento()">
-          Confirmar Pagamento
-        </button>
-
-      </div>
-
-    </div>
-
-    <!-- PIX -->
-    <div class="etapa" id="etapaPix">
-
-      <button class="voltar" onclick="voltarPagamento()">← Voltar</button>
-
-      <canvas id="qrcode"></canvas>
-
-      <textarea id="codigoPix" readonly></textarea>
-
-      <button class="btn-main" onclick="copiarPix()">
-        Copiar Código Pix
-      </button>
-
-      <button class="btn-confirmar" onclick="confirmarPagamento()">
-        Confirmar Pagamento
-      </button>
-
-    </div>
-
-    <!-- SUCESSO -->
-    <div class="etapa" id="etapaSucesso">
-
-      <div class="sucesso-box">
-
-        <div class="check-icon">✔</div>
-
-        <h2>Sucesso!</h2>
-        <p>Seu pedido foi confirmado e será preparado em breve.</p>
-
-        <h3>Avalie nosso serviço</h3>
-
-        <div class="avaliacoes">
-          <div class="card-avaliacao">Google ⭐⭐⭐⭐⭐</div>
-          <div class="card-avaliacao">TripAdvisor ⭐⭐⭐⭐⭐</div>
-        </div>
-
-        <button class="btn-main" onclick="fecharModal()">
-          Fechar
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
+<div id="modalPedido" class="modal">
+  <div class="modal-box"></div>
 </div>
 
 <!-- CONTATOS -->
@@ -547,7 +635,11 @@
 
 </footer>
 
-<script src="./src/js/cardapio.js"></script>
+<script type="module" src="./src/js/main.js"></script>
+<script type="module" src="./src/js/cardapio.js"></script>
+<script type="module" src="./src/js/menu.js"></script> 
+
+<div id="toast" class="toast">Adicionado ao carrinho</div>
 
 </body>
 </html>
