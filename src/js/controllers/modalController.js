@@ -5,6 +5,7 @@ import { carrinho } from "../main.js";
 import { atualizarBadge } from "../ui/badge.js";
 import { mostrarToast, mostrarErro, animarCarrinho } from "../ui/feedback.js";
 import { resetState } from "../state/modalState.js";
+import { normalizarItem } from "../utils/helpers.js";
 
 function getModalElements() {
   return {
@@ -14,10 +15,20 @@ function getModalElements() {
 }
 
 export function abrirConfig(nome, preco) {
+
   const { modal, box } = getModalElements();
 
+  const mesmoItem =
+  modalState.item.nome === nome;
+
+if (!mesmoItem) {
+
+  resetState();
+
   modalState.item.nome = nome;
+
   modalState.precoBase = preco;
+}
 
   modal.classList.add("active");
 
@@ -28,6 +39,8 @@ export function abrirConfig(nome, preco) {
   bindEvents();
 
   bindCloseModal();
+
+  restaurarConfig();
 
   atualizarPreco();
 }
@@ -62,18 +75,21 @@ function montarExtras() {
         <div class="linha-tripla">
 
           <select id="sabor1">
+           <option value="">Sem extras</option>
             <option value="calabresa">Calabresa</option>
             <option value="frango">Frango</option>
             <option value="mussarela">Mussarela</option>
           </select>
 
           <select id="borda">
+           <option value="">Sem borda</option>
             <option value="">Borda</option>
             <option value="catupiry">Catupiry</option>
             <option value="cheddar">Cheddar</option>
           </select>
 
           <select id="bebida">
+           <option value="">Sem bebida</option>
             <option value="">Bebida</option>
             <option value="coca">Coca</option>
             <option value="guarana">Guaraná</option>
@@ -87,6 +103,7 @@ function montarExtras() {
         </label>
 
         <select id="sabor2" style="display:none;">
+         <option value="">Sem sabor adicional</option>
           <option value="calabresa">Calabresa</option>
           <option value="frango">Frango</option>
           <option value="mussarela">Mussarela</option>
@@ -209,6 +226,61 @@ function montarExtras() {
   }
 }
 
+function restaurarConfig() {
+
+  const config = modalState.config;
+
+  document.getElementById("quantidade").value =
+    config.quantidade || 1;
+
+  if (document.getElementById("sabor1")) {
+    document.getElementById("sabor1").value =
+      config.sabor1 || "";
+  }
+
+  if (document.getElementById("sabor2")) {
+
+    document.getElementById("sabor2").style.display =
+      config.meioMeio ? "block" : "none";
+
+    document.getElementById("sabor2").value =
+      config.sabor2 || "";
+  }
+
+  if (document.getElementById("meioMeio")) {
+    document.getElementById("meioMeio").checked =
+      config.meioMeio || false;
+  }
+
+  if (document.getElementById("borda")) {
+    document.getElementById("borda").value =
+      config.borda || "";
+  }
+
+  if (document.getElementById("bebida")) {
+    document.getElementById("bebida").value =
+      config.bebida || "";
+  }
+
+  if (document.getElementById("ponto")) {
+    document.getElementById("ponto").value =
+      config.ponto || "";
+  }
+
+  if (document.getElementById("massa")) {
+    document.getElementById("massa").value =
+      config.massa || "";
+  }
+
+  document.querySelectorAll(".extra").forEach(extra => {
+
+    extra.checked =
+      config.extras?.includes(extra.value);
+
+  });
+
+}
+
 function bindEvents() {
   document.getElementById("btnContinuar")
     .addEventListener("click", irEntrega);
@@ -233,7 +305,7 @@ function atualizarPreco() {
     extras: [...document.querySelectorAll(".extra:checked")].map(e => e.value)
   };
 
-    const resultado = calcularTotal(
+   const resultado = calcularTotal(
     modalState.config,
     modalState.precoBase
   );
@@ -250,37 +322,81 @@ function irEntrega() {
     modalState.precoBase
   );
 
-  carrinho.adicionar({
-    nome: modalState.item.nome,
-    ...modalState.config,
-    precoUnitario: resultado.precoUnitario,
-    total: resultado.total
-  });
-
-  atualizarBadge();
-  mostrarToast();
-  animarCarrinho();
-
   box.innerHTML = view.renderEntrega(resultado.total);
 
   document.getElementById("btnPagamento")
     .addEventListener("click", irPagamento);
 
   bindCloseModal();
+
+  document
+  .getElementById("btnVoltarConfig")
+  ?.addEventListener("click", voltarConfig);
 }
 
 function irPagamento() {
+
   const { box } = getModalElements();
 
   modalState.endereco = {
     rua: document.getElementById("rua").value,
     bairro: document.getElementById("bairro").value,
-    numero: document.getElementById("numero").value
+    numero: document.getElementById("numero").value,
+    complemento: document.getElementById("complemento").value
   };
 
   if (!modalState.endereco.rua || !modalState.endereco.numero) {
     return mostrarErro("Preencha endereço corretamente");
   }
+
+  const resultado = calcularTotal(
+    modalState.config,
+    modalState.precoBase
+  );
+
+  const total = resultado.total;
+
+  modalState.checkoutItens = [
+  normalizarItem({
+    nome: modalState.item.nome,
+    ...modalState.config,
+    precoUnitario: resultado.precoUnitario,
+    total: resultado.total
+  })
+];
+
+  box.innerHTML = view.renderPagamento(
+    total,
+    modalState.endereco
+  );
+
+  document.querySelectorAll(".pag-card").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+      enviarWhatsApp(btn.dataset.pag);
+
+    });
+
+  });
+
+  document
+    .getElementById("btnEditarEndereco")
+    .addEventListener("click", voltarEntrega);
+
+  bindCloseModal();
+}
+
+function irPagamentoCarrinho() {
+
+  const { box } = getModalElements();
+
+  modalState.endereco = {
+    rua: document.getElementById("rua").value,
+    bairro: document.getElementById("bairro").value,
+    numero: document.getElementById("numero").value,
+    complemento: document.getElementById("complemento").value
+  };
 
   const total = carrinho.getTotal();
 
@@ -290,30 +406,116 @@ function irPagamento() {
   );
 
   document.querySelectorAll(".pag-card").forEach(btn => {
+
     btn.addEventListener("click", () => {
+
       enviarWhatsApp(btn.dataset.pag);
+
     });
+
   });
 
   bindCloseModal();
 }
 
+function voltarEntrega() {
+  const { box } = getModalElements();
+
+  const total = modalState.checkoutItens.reduce(
+  (acc, item) => acc + item.total,
+  0
+);
+
+  box.innerHTML = view.renderEntrega(total);
+
+  document.getElementById("rua").value =
+    modalState.endereco.rua || "";
+
+  document.getElementById("bairro").value =
+    modalState.endereco.bairro || "";
+
+  document.getElementById("numero").value =
+    modalState.endereco.numero || "";
+
+    document.getElementById("complemento").value =
+  modalState.endereco.complemento || "";
+
+  document
+  .getElementById("btnPagamento")
+  .addEventListener(
+    "click",
+    modalState.comprandoDoCarrinho
+      ? irPagamentoCarrinho
+      : irPagamento
+  );
+
+  bindCloseModal();
+}
+
+function voltarConfig() {
+  abrirConfig(
+    modalState.item.nome,
+    modalState.precoBase
+  );
+}
+
 function enviarWhatsApp(tipo) {
    const { modal } = getModalElements();
 
-   const itens = carrinho.getItens();
+   const itens = modalState.checkoutItens;
 
   let msg = "🛒 *Pedido*\n\n";
 
   itens.forEach(i => {
-    msg += `${i.nome} x${i.quantidade} - R$ ${i.total.toFixed(2)}\n`;
-  });
+
+  msg += `🍔 ${i.nome}\n`;
+  msg += `Qtd: ${i.quantidade}\n`;
+
+  if (i.extras?.length) {
+    msg += `Extras: ${i.extras.join(", ")}\n`;
+  }
+
+  if (i.borda) {
+    msg += `Borda: ${i.borda}\n`;
+  }
+
+  if (i.bebida) {
+    msg += `Bebida: ${i.bebida}\n`;
+  }
+
+  if (i.ponto) {
+    msg += `Ponto: ${i.ponto}\n`;
+  }
+
+  if (i.massa) {
+    msg += `Massa: ${i.massa}\n`;
+  }
+
+  if (i.sabor1) {
+    msg += `Sabor: ${i.sabor1}\n`;
+  }
+
+  if (i.sabor2) {
+    msg += `2º sabor: ${i.sabor2}\n`;
+  }
+
+  if (i.meioMeio) {
+    msg += `Pizza meio a meio\n`;
+  }
+
+  msg += `💰 R$ ${i.total.toFixed(2)}\n\n`;
+});
 
   msg += `\n📍 ${modalState.endereco.rua}, ${modalState.endereco.numero}`;
   msg += `\n${modalState.endereco.bairro}`;
+  if (modalState.endereco.complemento) {
+  msg += `\n📌 ${modalState.endereco.complemento}`;
+}
   msg += `\n💳 ${tipo}`;
 
   window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`);
+
+  modalState.comprandoDoCarrinho = false;
 
   resetState();
 
@@ -333,9 +535,10 @@ export function abrirCarrinho() {
     </button>
 
     <div class="modal-scroll">
+
       <h2 class="carrinho-titulo">
-      <i class="fa-solid fa-cart-shopping"></i>
-      Seu Carrinho
+         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e08c00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        Seu Carrinho
       </h2>
 
       <div class="carrinho-lista" id="carrinhoLista"></div>
@@ -344,46 +547,67 @@ export function abrirCarrinho() {
         Comprar Tudo
       </button>
 
+      <button class="btn-limpar-carrinho" id="btnLimparCarrinho">
+        Limpar Carrinho
+      </button>
+
       <h3 class="carrinho-total">
         Total:
         <span id="totalCarrinho"></span>
       </h3>
+
     </div>
   `;
 
   atualizarCarrinhoUI();
 
   document
-  .getElementById("btnComprarTudo")
-  .addEventListener("click", comprarTudo);
+    .getElementById("btnComprarTudo")
+    .addEventListener("click", comprarTudo);
+
+  document
+    .getElementById("btnLimparCarrinho")
+    .addEventListener("click", limparCarrinho);
+
+  bindCloseModal();
 
   function comprarTudo() {
+
   const itens = carrinho.getItens();
 
-  if (!itens.length) return;
+  if (!itens.length) {
+    return mostrarErro("Carrinho vazio");
+  }
 
-  let msg = "🛒 *Pedido Completo*\n\n";
+  modalState.comprandoDoCarrinho = true;
 
-  let total = 0;
+  modalState.checkoutItens = [...itens];
 
-  itens.forEach(item => {
-    const subtotal = item.precoUnitario * item.quantidade;
+  const total = modalState.checkoutItens.reduce(
+  (acc, item) => acc + item.total,
+  0
+);
 
-    total += subtotal;
+  box.innerHTML = view.renderEntrega(total);
 
-    msg += `• ${item.nome}\n`;
-    msg += `Qtd: ${item.quantidade}\n`;
-    msg += `Subtotal: R$ ${subtotal.toFixed(2)}\n\n`;
-  });
+  document
+    .getElementById("btnPagamento")
+    .addEventListener("click", irPagamentoCarrinho);
 
-  msg += `💰 Total: R$ ${total.toFixed(2)}`;
-
-  window.open(
-    `https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`
-  );
-}
-    
   bindCloseModal();
+}
+
+  function limparCarrinho() {
+
+    carrinho.limpar();
+
+    atualizarCarrinhoUI();
+
+    atualizarBadge();
+
+    mostrarToast("Carrinho limpo!");
+
+  }
 }
 
 function bindCloseModal() {
@@ -399,6 +623,8 @@ export function fecharModal() {
 
   modal.classList.remove("active");
   box.innerHTML = "";
+
+    resetState();
 }
 
 import { atualizarCarrinhoUI } from "../ui/atualizarCarrinhoUI.js";

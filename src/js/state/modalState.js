@@ -1,4 +1,5 @@
 export const modalState = {
+
   item: {
     nome: ""
   },
@@ -20,12 +21,20 @@ export const modalState = {
   endereco: {
     rua: "",
     bairro: "",
-    numero: ""
-  }
+    numero: "",
+    complemento: ""
+  },
+
+  checkoutItens: [],
+  comprandoDoCarrinho: false
 };
 
 export function resetState() {
-  modalState.item = { nome: "" };
+
+  modalState.item = {
+    nome: ""
+  };
+
   modalState.precoBase = 0;
 
   modalState.config = {
@@ -43,6 +52,11 @@ export function resetState() {
   modalState.endereco = {
     rua: "",
     bairro: "",
-    numero: ""
+    numero: "",
+    complemento: ""
   };
+
+  modalState.checkoutItens = [];
+
+  modalState.comprandoDoCarrinho = false;
 }

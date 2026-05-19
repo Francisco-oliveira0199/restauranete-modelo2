@@ -84,23 +84,35 @@
     font-size: 14px;
 }
 
+.sub-titulo,
+.texto {
+    margin: 0;
+}
+
 /* BLOCO */
 .bloco {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
-.icon i {
-    background: var(--primary-light);
-    color: var(--primary-color);
-    width: 55px;
-    height: 55px;
+.icon {
+    width: 68px;
+    height: 68px;
     border-radius: 50%;
+    background: var(--primary-light);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--primary-color);
+    transition: 0.3s ease;
+}
+
+.icon img {
+    width: 38px;
+    height: 38px;
+    stroke: currentColor;
 }
 
 /* ================= CONTATO ================= */
@@ -114,7 +126,7 @@
 .botoes-contato {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin-top: 10px;
 }
 

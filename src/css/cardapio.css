@@ -57,7 +57,7 @@ html {
     cursor: pointer;
 }
 
-.categoria-btn i {
+.categoria-btn svg {
     color: var(--primary-color);
 }
 
@@ -66,7 +66,7 @@ html {
     color: white;
 }
 
-.categoria-btn.active i {
+.categoria-btn.active svg {
     color: white;
 }
 
@@ -180,28 +180,28 @@ html {
 
 /* ================= CONTATOS ================= */
 .contatos {
-    max-width: 550px;
+    max-width: 420px;
+    width: calc(100% - 32px);
     margin: 30px auto;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center;
 }
 
 .btn-contato {
     width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
     padding: 14px;
-
     border-radius: 12px;
     border: none;
-
     color: white;
     font-weight: 500;
-
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 8px;
-
     cursor: pointer;
 }
 
@@ -234,4 +234,33 @@ html {
 
 .endereco-dados p:last-child {
     color: var(--text-medium);
+}
+
+/* ================= TOAST ================= */
+
+.toast {
+    position: fixed;
+
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:rgb(45, 163, 45);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 999999;
+}
+
+/* QUANDO APARECE */
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
 }

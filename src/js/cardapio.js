@@ -2,6 +2,7 @@ import { abrirConfig, abrirCarrinho } from "./controllers/modalController.js";
 import { atualizarBadge } from "./ui/badge.js";
 import { carrinho } from "./main.js";
 import { mostrarToast, animarCarrinho } from "./ui/feedback.js";
+import { normalizarItem } from "./utils/helpers.js";
 
 /* ================= CATEGORIAS ================= */
 
@@ -48,12 +49,14 @@ document.querySelectorAll(".item").forEach(item => {
   botao.addEventListener("click", (e) => {
     e.stopPropagation();
 
-    carrinho.adicionar({
-      nome,
-      quantidade: 1,
-      precoUnitario: preco,
-      total: preco
-    });
+    carrinho.adicionar(
+  normalizarItem({
+    nome,
+    quantidade: 1,
+    precoUnitario: preco,
+    total: preco
+  })
+);
 
     atualizarBadge();
     mostrarToast();

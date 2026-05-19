@@ -280,3 +280,22 @@
     display: block;
     margin: 20px auto 0;
 }
+
+.btn-limpar-carrinho {
+    margin-top: 10px;
+    padding: 14px;
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background: #dc2626;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.btn-limpar-carrinho:hover {
+    background: #b91c1c;
+}

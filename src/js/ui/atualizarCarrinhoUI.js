@@ -5,6 +5,8 @@ import {
   diminuir,
   remover
 } from "../controllers/carrinhoController.js";
+import { abrirConfig } from "../controllers/modalController.js";
+import { modalState } from "../state/modalState.js";
 
 function atualizarCarrinhoUI() {
   const container = document.getElementById("carrinhoLista");
@@ -26,9 +28,8 @@ function atualizarCarrinhoUI() {
 
   carrinho.getItens().forEach((item, index) => {
     const precoBase = item.precoUnitario || item.preco;
-    const subtotal = precoBase * item.quantidade;
+    const subtotal = item.total;
     total += subtotal;
-
     let extrasHTML = "";
 
     if (item.meioMeio) {
@@ -86,7 +87,7 @@ function atualizarCarrinhoUI() {
     Comprar
   </button>
 
-</div>
+  </div>
 
       </div>
     `;
@@ -100,21 +101,35 @@ function atualizarCarrinhoUI() {
 export { atualizarCarrinhoUI };
 
 function comprarItem(index) {
+
   const item = carrinho.getItens()[index];
 
   if (!item) return;
 
-  const subtotal =
-    item.precoUnitario * item.quantidade;
+  modalState.comprandoDoCarrinho = true;
 
-  let msg = "🛒 *Pedido*\n\n";
+  modalState.item.nome = item.nome;
 
-  msg += `• ${item.nome}\n`;
-  msg += `Qtd: ${item.quantidade}\n`;
-  msg += `Total: R$ ${subtotal.toFixed(2)}`;
+  modalState.precoBase =
+  item.precoUnitario;
 
-  window.open(
-    `https://wa.me/5511999999999?text=${encodeURIComponent(msg)}`
+  modalState.config = {
+    quantidade: item.quantidade,
+    sabor1: item.sabor1 || null,
+    sabor2: item.sabor2 || null,
+    meioMeio: item.meioMeio || false,
+    borda: item.borda || null,
+    bebida: item.bebida || null,
+    ponto: item.ponto || null,
+    massa: item.massa || null,
+    extras: item.extras || []
+  };
+
+  modalState.checkoutItens = [item];
+
+  abrirConfig(
+    item.nome,
+    modalState.precoBase
   );
 }
 

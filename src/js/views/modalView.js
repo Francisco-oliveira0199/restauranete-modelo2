@@ -32,7 +32,6 @@ export function renderConfig(nome, preco) {
       </div>
 
       <div class="secao">
-        <h3>Adicionais</h3>
 
         <div id="extras"></div>
       </div>
@@ -65,6 +64,15 @@ export function renderEntrega(total) {
     </div>
 
     <div class="resumo">
+
+    <div class="endereco-header">
+    <div
+    class="editar-endereco"
+    id="btnVoltarConfig"
+  >
+    ← Voltar
+    </div>
+  </div>
 
       <h3>Endereço de entrega</h3>
 
@@ -107,6 +115,8 @@ export function renderPagamento(total, endereco) {
    <button class="fechar-x" id="fecharModal">
       <i class="fa-solid fa-xmark"></i>
     </button>
+
+    <div class="modal-scroll">
 
     <div class="resumo-topo">
 

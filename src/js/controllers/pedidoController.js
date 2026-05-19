@@ -32,13 +32,26 @@ function montarMensagem(itens, endereco = null, pagamento = null) {
 
 export function comprarTudo(endereco, pagamento) {
   const itens = carrinho.getItens();
-  if (!itens.length) return alert("Carrinho vazio");
 
-  const msg = montarMensagem(itens, endereco, pagamento);
-  window.open(`https://wa.me/${TELEFONE}?text=${encodeURIComponent(msg)}`);
+  if (!itens.length) {
+    return alert("Carrinho vazio");
+  }
+
+  const msg = montarMensagem(
+    itens,
+    endereco,
+    pagamento
+  );
+
+  window.open(
+    `https://wa.me/${TELEFONE}?text=${encodeURIComponent(msg)}`
+  );
 }
 
 export function comprarItem(item) {
   const msg = montarMensagem([item]);
-  window.open(`https://wa.me/${TELEFONE}?text=${encodeURIComponent(msg)}`);
+
+  window.open(
+    `https://wa.me/${TELEFONE}?text=${encodeURIComponent(msg)}`
+  );
 }

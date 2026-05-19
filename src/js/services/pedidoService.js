@@ -1,5 +1,9 @@
 const precosExtras = {
-  borda: { catupiry: 5, cheddar: 6 },
+  borda: {
+    catupiry: 5,
+    cheddar: 6
+  },
+
   bebida: {
     coca: 6,
     guarana: 6,
@@ -24,43 +28,71 @@ const adicionais = {
   milho: 2
 };
 
-export function calcularTotal(config, precoBaseOriginal) {
+export function calcularTotal(
+  config,
+  precoBaseOriginal
+) {
+
   const qtd = Number(config.quantidade || 1);
 
   let precoUnitario = precoBaseOriginal;
 
+  /* ================= SABORES ================= */
+
   if (config.sabor1) {
-    const p1 = sabores[config.sabor1] || precoBaseOriginal;
+
+    const precoSabor1 =
+      sabores[config.sabor1] || precoBaseOriginal;
 
     if (config.meioMeio && config.sabor2) {
-      const p2 = sabores[config.sabor2] || precoBaseOriginal;
-      precoUnitario = (p1 + p2) / 2;
+
+      const precoSabor2 =
+        sabores[config.sabor2] || precoBaseOriginal;
+
+      precoUnitario =
+        (precoSabor1 + precoSabor2) / 2;
+
     } else {
-      precoUnitario = p1;
+
+      precoUnitario = precoSabor1;
+
     }
   }
+
+  /* ================= EXTRAS ================= */
 
   let extrasTotal = 0;
 
   if (config.borda) {
-    extrasTotal += precosExtras.borda[config.borda] || 0;
+    extrasTotal +=
+      precosExtras.borda[config.borda] || 0;
   }
 
   if (config.bebida) {
-    extrasTotal += precosExtras.bebida[config.bebida] || 0;
+    extrasTotal +=
+      precosExtras.bebida[config.bebida] || 0;
   }
 
   if (config.extras?.length) {
-    config.extras.forEach(e => {
-      extrasTotal += adicionais[e] || 0;
+
+    config.extras.forEach(extra => {
+
+      extrasTotal +=
+        adicionais[extra] || 0;
+
     });
   }
 
-  const precoFinalUnitario = precoUnitario + extrasTotal;
-  const total = precoFinalUnitario * qtd;
+  /* ================= TOTAL ================= */
+
+  const precoFinalUnitario =
+    precoUnitario + extrasTotal;
+
+  const total =
+    precoFinalUnitario * qtd;
 
   return {
-  precoUnitario: Number(precoFinalUnitario),
-  total: Number(total)
-};
+    precoUnitario: Number(precoFinalUnitario),
+    total: Number(total)
+  };
 }
