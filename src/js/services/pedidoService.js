@@ -39,25 +39,26 @@ export function calcularTotal(
 
   /* ================= SABORES ================= */
 
-  if (config.sabor1) {
+  const saborOriginal = config.sabor1;
 
-    const precoSabor1 =
-      sabores[config.sabor1] || precoBaseOriginal;
+if (saborOriginal) {
 
-    if (config.meioMeio && config.sabor2) {
+  const p1 =
+    sabores[saborOriginal] || precoBaseOriginal;
 
-      const precoSabor2 =
-        sabores[config.sabor2] || precoBaseOriginal;
+  if (config.meioMeio && config.sabor2) {
 
-      precoUnitario =
-        (precoSabor1 + precoSabor2) / 2;
+    const p2 =
+      sabores[config.sabor2] || precoBaseOriginal;
 
-    } else {
+    precoUnitario = (p1 + p2) / 2;
 
-      precoUnitario = precoSabor1;
+  } else {
 
-    }
+    precoUnitario = p1;
+
   }
+}
 
   /* ================= EXTRAS ================= */
 

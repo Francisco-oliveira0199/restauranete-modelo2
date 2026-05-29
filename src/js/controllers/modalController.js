@@ -6,6 +6,7 @@ import { atualizarBadge } from "../ui/badge.js";
 import { mostrarToast, mostrarErro, animarCarrinho } from "../ui/feedback.js";
 import { resetState } from "../state/modalState.js";
 import { normalizarItem } from "../utils/helpers.js";
+import { atualizarCarrinhoUI } from "../ui/atualizarCarrinhoUI.js";
 
 function getModalElements() {
   return {
@@ -14,20 +15,36 @@ function getModalElements() {
   };
 }
 
-export function abrirConfig(nome, preco) {
+modalState.modo = "compra-direta";
+export function abrirConfigCarrinho(nome, preco, sabor = null) {
+
+  modalState.modo = "carrinho";
+
+  abrirConfig(nome, preco, sabor);
+
+}
+
+export function abrirConfig(nome, preco, sabor = null) {
 
   const { modal, box } = getModalElements();
 
   const mesmoItem =
-  modalState.item.nome === nome;
+  modalState.item.nome === nome &&
+  modalState.item.sabor === sabor;
 
 if (!mesmoItem) {
 
+  const modoAtual = modalState.modo;
+
   resetState();
+
+  modalState.modo = modoAtual;
 
   modalState.item.nome = nome;
 
   modalState.precoBase = preco;
+
+  modalState.item.sabor = sabor;
 }
 
   modal.classList.add("active");
@@ -62,68 +79,305 @@ function montarExtras() {
 
   if (!el) return;
 
-  /* ================= PIZZA ================= */
-
   if (tipo === "pizza") {
 
     el.innerHTML = `
 
-      <div class="secao">
+     <div class="secao">
 
-        <h3>Adicionais</h3>
+    <h3>Borda recheada</h3>
 
-        <div class="linha-tripla">
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="borda"
+        value=""
+        checked
+      >
+      <p>Sem borda</p>
+    </label>
 
-          <select id="sabor1">
-           <option value="">Sem extras</option>
-            <option value="calabresa">Calabresa</option>
-            <option value="frango">Frango</option>
-            <option value="mussarela">Mussarela</option>
-          </select>
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="borda"
+        value="catupiry"
+      >
+      <p>Catupiry</p> <span>+R$ 5</span>
+    </label>
 
-          <select id="borda">
-           <option value="">Sem borda</option>
-            <option value="">Borda</option>
-            <option value="catupiry">Catupiry</option>
-            <option value="cheddar">Cheddar</option>
-          </select>
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="borda"
+        value="cheddar"
+      >
+      <p>Cheddar</p> <span>+R$ 6</span>
+    </label>
 
-          <select id="bebida">
-           <option value="">Sem bebida</option>
-            <option value="">Bebida</option>
-            <option value="coca">Coca</option>
-            <option value="guarana">Guaraná</option>
-          </select>
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="borda"
+        value="chocolate"
+      >
+      <p>Chocolate</p> <span>+R$ 8</span>
+    </label>
 
-        </div>
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="borda"
+        value="cream-cheese"
+      >
+      <p>Cream Cheese</p> <span>+R$ 8</span>
+    </label>
 
-        <label>
-          <input type="checkbox" id="meioMeio">
-          Meio a meio
-        </label>
+  </div>
 
-        <select id="sabor2" style="display:none;">
-         <option value="">Sem sabor adicional</option>
-          <option value="calabresa">Calabresa</option>
-          <option value="frango">Frango</option>
-          <option value="mussarela">Mussarela</option>
-        </select>
+  <div class="secao">
 
-      </div>
+    <h3>Pizza meio a meio</h3>
+
+    <label class="radio-option">
+      <input
+        type="checkbox"
+        id="meioMeio"
+      >
+      Quero metade com outro sabor
+    </label>
+
+    <div
+      id="saboresMeioMeio"
+      style="display:none;"
+    >
+
+      <h4>Escolha o segundo sabor</h4>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="sabor2"
+          value="calabresa"
+        >
+        Calabresa
+      </label>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="sabor2"
+          value="frango-com-catupiry"
+        >
+        Frango com Catupiry
+      </label>
+
+      <label class="radio-option">
+        <input
+          type="radio"
+          name="sabor2"
+          value="mussarela"
+        >
+        Mussarela
+      </label>
+
+      <label class="radio-option">
+      <input
+        type="radio"
+        name="sabor2"
+        value="portuguesa"
+      >
+      Portuguesa
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="sabor2"
+        value="quatro-queijos"
+      >
+      Quatro Queijos
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="sabor2"
+        value="pepperoni"
+      >
+      Pepperoni
+    </label>
+
+    </div>
+
+  </div>
+
+  <div class="secao">
+
+    <h3>Extras</h3>
+
+    <label class="radio-option">
+      <input
+        type="checkbox"
+        class="extra"
+        value="bacon"
+      >
+      <p>Bacon</p> <span>+R$ 3</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="checkbox"
+        class="extra"
+        value="queijo"
+      >
+      <p>Queijo extra</p> <span>+R$ 2</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="checkbox"
+        class="extra"
+        value="calabresa"
+      >
+      <p>Calabresa</p> <span>+R$ 4</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="checkbox"
+        class="extra"
+        value="ovo"
+      >
+      <p>Ovo</p> <span>+R$ 2</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="checkbox"
+        class="extra"
+        value="milho"
+      >
+      <p>Milho</p> <span>+R$ 2</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="checkbox"
+        class="extra"
+        value="cebola"
+      >
+      <p>Cebola</p> <span>+R$ 1,50</span>
+    </label>
+
+  </div>
+
+  <div class="secao">
+
+    <h3>Bebida</h3>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="bebida"
+        value=""
+        checked
+      >
+      <p>Sem bebida</p>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="bebida"
+        value="coca-lata"
+      >
+      <p>Coca-Cola Lata</p> <span>+R$ 6</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="bebida"
+        value="guarana"
+      >
+      <p>Guaraná Antarctica</p> <span>+R$ 6</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="bebida"
+        value="coca-1l"
+      >
+      <p>Coca-Cola 1L</p> <span>+R$ 10,00</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="bebida"
+        value="laranja"
+      >
+      <p>Suco de Laranja</p> <span>+R$ 12,00</span>
+    </label>
+
+    <label class="radio-option">
+      <input
+        type="radio"
+        name="bebida"
+        value="agua"
+      >
+      <p>Água Mineral</p> <span>+R$ 4,00</span>
+    </label>
+
+  </div>
+
+  <div class="secao">
+
+    <h3>Observações</h3>
+
+    <textarea
+      id="observacoes"
+      placeholder="Ex: sem cebola, mais assada..."
+    ></textarea>
+
+  </div>
 
     `;
 
     document
-      .getElementById("meioMeio")
-      .addEventListener("change", e => {
+  .getElementById("meioMeio")
+  ?.addEventListener("change", e => {
 
-        document.getElementById("sabor2").style.display =
-          e.target.checked ? "block" : "none";
+    const box =
+      document.getElementById("saboresMeioMeio");
 
-      });
+    box.style.display =
+      e.target.checked ? "block" : "none";
+
+    if (!e.target.checked) {
+
+      document
+        .querySelectorAll('input[name="sabor2"]')
+        .forEach(radio => {
+
+          radio.checked = false;
+
+        });
+
+    }
+
+    atualizarPreco();
+
+});
+
+    const meioMeio =
+  document.getElementById("meioMeio");
+
+document.getElementById("saboresMeioMeio").style.display =
+  meioMeio?.checked ? "block" : "none";
   }
-
-  /* ================= HAMBURGUER ================= */
 
   if (tipo === "hamburguer") {
 
@@ -131,53 +385,163 @@ function montarExtras() {
 
       <div class="secao">
 
-        <h3>Adicionais</h3>
+  <h3>Adicionais</h3>
 
-        <label>
-          <input type="checkbox" class="extra" value="bacon">
-          Bacon
-        </label>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="bacon"
+    >
+    <p>Bacon</p>
+    <span>+R$ 4</span>
+  </label>
 
-        <label>
-          <input type="checkbox" class="extra" value="queijo">
-          Queijo
-        </label>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="queijo"
+    >
+    <p>Queijo extra</p>
+    <span>+R$ 3</span>
+  </label>
 
-        <label>
-          <input type="checkbox" class="extra" value="alface">
-          Alface
-        </label>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="cebola-caramelizada"
+    >
+    <p>Cebola caramelizada</p>
+    <span>+R$ 3</span>
+  </label>
 
-      </div>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="ovo"
+    >
+    <p>Ovo</p>
+    <span>+R$ 2</span>
+  </label>
 
-      <div class="secao">
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="picles"
+    >
+    <p>Picles</p>
+    <span>+R$ 2</span>
+  </label>
 
-        <h3>Ponto da carne</h3>
+</div>
 
-        <select id="ponto">
-          <option value="mal passado">Mal passado</option>
-          <option value="ao ponto">Ao ponto</option>
-          <option value="bem passado">Bem passado</option>
-        </select>
+<div class="secao">
 
-      </div>
+  <h3>Ponto da carne</h3>
 
-      <div class="secao">
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="ponto"
+      value="mal-passado"
+    >
+    <p>Mal passado</p>
+  </label>
 
-        <h3>Bebida</h3>
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="ponto"
+      value="ao-ponto"
+      checked
+    >
+    <p>Ao ponto</p>
+  </label>
 
-        <select id="bebida">
-          <option value="">Sem bebida</option>
-          <option value="coca">Coca</option>
-          <option value="guarana">Guaraná</option>
-        </select>
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="ponto"
+      value="bem-passado"
+    >
+    <p>Bem passado</p>
+  </label>
 
-      </div>
+</div>
+
+<div class="secao">
+
+  <h3>Bebida</h3>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value=""
+      checked
+    >
+    <p>Sem bebida</p>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="coca-lata"
+    >
+    <p>Coca-Cola Lata</p>
+    <span>+R$ 6</span>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="guarana"
+    >
+    <p>Guaraná Antarctica</p>
+    <span>+R$ 6</span>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="suco de laranja"
+    >
+    <p>Suco Natural de Laranja</p>
+    <span>+R$ 10</span>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="agua"
+    >
+    <p>Água Mineral</p>
+    <span>+R$ 4</span>
+  </label>
+
+</div>
+
+<div class="secao">
+
+  <h3>Observações</h3>
+
+  <textarea
+    id="observacoes"
+    placeholder="Ex: sem cebola, molho separado..."
+  ></textarea>
+
+</div>
 
     `;
   }
-
-  /* ================= PASTEL ================= */
 
   if (tipo === "pastel") {
 
@@ -185,42 +549,162 @@ function montarExtras() {
 
       <div class="secao">
 
-        <h3>Adicionais</h3>
+  <h3>Adicionais</h3>
 
-        <label>
-          <input type="checkbox" class="extra" value="queijo">
-          Queijo
-        </label>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="queijo"
+    >
+    <p>Queijo extra</p>
+    <span>+R$ 3</span>
+  </label>
 
-        <label>
-          <input type="checkbox" class="extra" value="milho">
-          Milho
-        </label>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="milho"
+    >
+    <p>Milho</p>
+    <span>+R$ 2</span>
+  </label>
 
-      </div>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="bacon"
+    >
+    <p>Bacon crocante</p>
+    <span>+R$ 4</span>
+  </label>
 
-      <div class="secao">
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="catupiry"
+    >
+    <p>Catupiry</p>
+    <span>+R$ 3</span>
+  </label>
 
-        <h3>Massa</h3>
+  <label class="radio-option">
+    <input
+      type="checkbox"
+      class="extra"
+      value="calabresa"
+    >
+    <p>Calabresa</p>
+    <span>+R$ 4</span>
+  </label>
 
-        <select id="massa">
-          <option value="tradicional">Tradicional</option>
-          <option value="pizza">Pizza</option>
-        </select>
+</div>
 
-      </div>
+<div class="secao">
 
-      <div class="secao">
+  <h3>Tipo de massa</h3>
 
-        <h3>Bebida</h3>
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="massa"
+      value="tradicional"
+      checked
+    >
+    <p>Tradicional</p>
+  </label>
 
-        <select id="bebida">
-          <option value="">Sem bebida</option>
-          <option value="coca">Coca</option>
-          <option value="guarana">Guaraná</option>
-        </select>
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="massa"
+      value="pizza"
+    >
+    <p>Massa sabor pizza</p>
+    <span>+R$ 2</span>
+  </label>
 
-      </div>
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="massa"
+      value="integral"
+    >
+    <p>Massa integral</p>
+    <span>+R$ 3</span>
+  </label>
+
+</div>
+
+<div class="secao">
+
+  <h3>Bebida</h3>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value=""
+      checked
+    >
+    <p>Sem bebida</p>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="coca-lata"
+    >
+    <p>Coca-Cola Lata</p>
+    <span>+R$ 6</span>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="guarana"
+    >
+    <p>Guaraná Antarctica</p>
+    <span>+R$ 6</span>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="suco de laranja"
+    >
+    <p>Suco Natural de Laranja</p>
+    <span>+R$ 10</span>
+  </label>
+
+  <label class="radio-option">
+    <input
+      type="radio"
+      name="bebida"
+      value="agua"
+    >
+    <p>Água Mineral</p>
+    <span>+R$ 4</span>
+  </label>
+
+</div>
+
+<div class="secao">
+
+  <h3>Observações</h3>
+
+  <textarea
+    id="observacoes"
+    placeholder="Ex: pouco óleo, bem crocante, molho separado..."
+  ></textarea>
+
+</div>
 
     `;
   }
@@ -230,91 +714,98 @@ function restaurarConfig() {
 
   const config = modalState.config;
 
-  document.getElementById("quantidade").value =
-    config.quantidade || 1;
+  document.getElementById("quantidadeValor").innerText =
+  config.quantidade || 1;
 
   if (document.getElementById("sabor1")) {
     document.getElementById("sabor1").value =
       config.sabor1 || "";
+
+  const obs =
+  document.getElementById("observacoes");
+
+if (obs) {
+  obs.value = config.observacoes || "";
+}
   }
 
-  if (document.getElementById("sabor2")) {
+if (config.sabor2) {
 
-    document.getElementById("sabor2").style.display =
-      config.meioMeio ? "block" : "none";
+  const radio = document.querySelector(
+    `input[name="sabor2"][value="${config.sabor2}"]`
+  );
 
-    document.getElementById("sabor2").value =
-      config.sabor2 || "";
+  if (radio) {
+    radio.checked = true;
   }
+
+}
 
   if (document.getElementById("meioMeio")) {
     document.getElementById("meioMeio").checked =
       config.meioMeio || false;
   }
 
-  if (document.getElementById("borda")) {
-    document.getElementById("borda").value =
-      config.borda || "";
+  if (config.borda) {
+
+  const radio = document.querySelector(
+    `input[name="borda"][value="${config.borda}"]`
+  );
+
+  if (radio) {
+    radio.checked = true;
   }
 
-  if (document.getElementById("bebida")) {
-    document.getElementById("bebida").value =
-      config.bebida || "";
+}
+
+  const bebida = document.querySelector(
+  `input[name="bebida"][value="${config.bebida}"]`
+);
+
+if (bebida) {
+  bebida.checked = true;
+}
+
+  if (config.ponto) {
+
+  const radio = document.querySelector(
+    `input[name="ponto"][value="${config.ponto}"]`
+  );
+
+  if (radio) {
+    radio.checked = true;
   }
 
-  if (document.getElementById("ponto")) {
-    document.getElementById("ponto").value =
-      config.ponto || "";
+}
+
+  if (config.massa) {
+
+  const radio = document.querySelector(
+    `input[name="massa"][value="${config.massa}"]`
+  );
+
+  if (radio) {
+    radio.checked = true;
   }
 
-  if (document.getElementById("massa")) {
-    document.getElementById("massa").value =
-      config.massa || "";
-  }
+}
 
   document.querySelectorAll(".extra").forEach(extra => {
 
     extra.checked =
       config.extras?.includes(extra.value);
 
-  });
+   });
 
-}
-
-function bindEvents() {
-  document.getElementById("btnContinuar")
-    .addEventListener("click", irEntrega);
-
-  document.getElementById("quantidade")
-    .addEventListener("input", atualizarPreco);
-
-  document.getElementById("extras")
-    .addEventListener("change", atualizarPreco);
-}
-
-function atualizarPreco() {
-  modalState.config = {
-    quantidade: Number(document.getElementById("quantidade").value || 1),
-    sabor1: document.getElementById("sabor1")?.value,
-    sabor2: document.getElementById("sabor2")?.value,
-    meioMeio: document.getElementById("meioMeio")?.checked,
-    borda: document.getElementById("borda")?.value,
-    bebida: document.getElementById("bebida")?.value,
-    ponto: document.getElementById("ponto")?.value,
-    massa: document.getElementById("massa")?.value,
-    extras: [...document.querySelectorAll(".extra:checked")].map(e => e.value)
-  };
-
-   const resultado = calcularTotal(
-    modalState.config,
-    modalState.precoBase
-  );
-
-  document.getElementById("precoTotal").innerText =
-  `R$ ${resultado.total.toFixed(2).replace(".", ",")}`;
-}
+  }
 
 function irEntrega() {
+
+  if (modalState.modo === "carrinho") {
+    adicionarAoCarrinho();
+    return;
+  }
+
   const { box } = getModalElements();
 
   const resultado = calcularTotal(
@@ -324,14 +815,143 @@ function irEntrega() {
 
   box.innerHTML = view.renderEntrega(resultado.total);
 
-  document.getElementById("btnPagamento")
+  document
+    .getElementById("btnPagamento")
     .addEventListener("click", irPagamento);
 
   bindCloseModal();
 
   document
-  .getElementById("btnVoltarConfig")
-  ?.addEventListener("click", voltarConfig);
+    .getElementById("btnVoltarConfig")
+    ?.addEventListener("click", voltarConfig);
+}
+
+function adicionarAoCarrinho() {
+
+  atualizarPreco();
+
+  const resultado = calcularTotal(
+    modalState.config,
+    modalState.precoBase
+  );
+
+  const item = normalizarItem({
+    nome: modalState.item.nome,
+    ...modalState.config,
+    precoUnitario: resultado.precoUnitario,
+    total: resultado.total
+  });
+
+  carrinho.adicionar(item);
+
+  atualizarBadge();
+
+  animarCarrinho();
+
+  mostrarToast("Item adicionado!");
+
+  fecharModal();
+}
+
+function bindEvents() {
+  document.getElementById("btnContinuar")
+    .addEventListener("click", irEntrega);
+
+    document
+  .getElementById("btnAdicionarCarrinho")
+  ?.addEventListener("click", adicionarAoCarrinho);
+
+const menos = document.getElementById("menosQtd");
+const mais = document.getElementById("maisQtd");
+const valor = document.getElementById("quantidadeValor");
+
+if (menos && mais && valor) {
+
+  menos.addEventListener("click", () => {
+
+    let qtd = Number(valor.innerText);
+
+    if (qtd > 1) {
+      qtd--;
+    }
+
+    valor.innerText = qtd;
+
+    atualizarPreco();
+
+  });
+
+  mais.addEventListener("click", () => {
+
+    let qtd = Number(valor.innerText);
+
+    qtd++;
+
+    valor.innerText = qtd;
+
+    atualizarPreco();
+
+  });
+
+}
+
+  document.getElementById("extras")
+    .addEventListener("change", atualizarPreco);
+}
+
+function atualizarPreco() {
+
+  modalState.config = {
+
+    quantidade: Number(
+      document.getElementById("quantidadeValor")?.innerText || 1
+    ),
+
+    sabor1: modalState.item.sabor || null,
+
+sabor2:
+  document.querySelector('input[name="sabor2"]:checked')?.value || null,
+
+    meioMeio: document.getElementById("meioMeio")?.checked,
+
+    borda:
+  document.querySelector('input[name="borda"]:checked')?.value || null,
+
+    bebida:
+  document.querySelector('input[name="bebida"]:checked')?.value || null,
+
+    ponto:
+document.querySelector('input[name="ponto"]:checked')?.value || null,
+
+    massa:
+document.querySelector('input[name="massa"]:checked')?.value || null,
+
+    observacoes:
+  document.getElementById("observacoes")?.value || "",
+
+    extras: [
+      ...document.querySelectorAll(".extra:checked")
+    ].map(e => e.value)
+
+  };
+
+  const resultado = calcularTotal(
+    modalState.config,
+    modalState.precoBase
+  );
+
+  document.getElementById("precoTotal").innerText =
+    `R$ ${resultado.total.toFixed(2).replace(".", ",")}`;
+
+  const footer = document.getElementById("precoTotalFooter");
+
+  if (footer) {
+
+    footer.innerText =
+      `R$ ${resultado.total.toFixed(2).replace(".", ",")}`;
+
+  }
+
 }
 
 function irPagamento() {
@@ -454,9 +1074,10 @@ function voltarEntrega() {
 
 function voltarConfig() {
   abrirConfig(
-    modalState.item.nome,
-    modalState.precoBase
-  );
+  modalState.item.nome,
+  modalState.precoBase,
+  modalState.item.sabor
+);
 }
 
 function enviarWhatsApp(tipo) {
@@ -495,13 +1116,17 @@ function enviarWhatsApp(tipo) {
     msg += `Sabor: ${i.sabor1}\n`;
   }
 
-  if (i.sabor2) {
-    msg += `2º sabor: ${i.sabor2}\n`;
-  }
+  if (i.observacoes) {
+  msg += `Obs: ${i.observacoes}\n`;
+}
 
-  if (i.meioMeio) {
-    msg += `Pizza meio a meio\n`;
-  }
+if (i.sabor2) {
+  msg += `2º sabor: ${i.sabor2}\n`;
+}
+
+if (i.meioMeio) {
+  msg += `Pizza meio a meio\n`;
+}
 
   msg += `💰 R$ ${i.total.toFixed(2)}\n\n`;
 });
@@ -581,6 +1206,8 @@ export function abrirCarrinho() {
 
   modalState.comprandoDoCarrinho = true;
 
+  modalState.modo = "checkout-carrinho";
+
   modalState.checkoutItens = [...itens];
 
   const total = modalState.checkoutItens.reduce(
@@ -627,7 +1254,7 @@ export function fecharModal() {
     resetState();
 }
 
-import { atualizarCarrinhoUI } from "../ui/atualizarCarrinhoUI.js";
+
 
 
 

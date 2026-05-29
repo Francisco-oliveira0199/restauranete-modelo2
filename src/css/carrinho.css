@@ -299,3 +299,25 @@
 .btn-limpar-carrinho:hover {
     background: #b91c1c;
 }
+
+.fechar-x {
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 15px;
+
+  z-index: 999;
+
+  border: none;
+
+  background: transparent;
+
+  color: #222;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+}

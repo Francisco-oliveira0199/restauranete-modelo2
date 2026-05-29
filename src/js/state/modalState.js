@@ -1,7 +1,10 @@
 export const modalState = {
 
+  modo: "compra-direta",
+
   item: {
-    nome: ""
+    nome: "",
+    sabor: null
   },
 
   precoBase: 0,
@@ -15,7 +18,8 @@ export const modalState = {
     bebida: null,
     ponto: null,
     extras: [],
-    massa: null
+    massa: null,
+    observacoes: ""
   },
 
   endereco: {
@@ -26,13 +30,15 @@ export const modalState = {
   },
 
   checkoutItens: [],
+
   comprandoDoCarrinho: false
 };
 
 export function resetState() {
 
   modalState.item = {
-    nome: ""
+    nome: "",
+    sabor: null
   };
 
   modalState.precoBase = 0;
@@ -46,7 +52,8 @@ export function resetState() {
     bebida: null,
     ponto: null,
     extras: [],
-    massa: null
+    massa: null,
+    observacoes: ""
   };
 
   modalState.endereco = {
@@ -59,4 +66,6 @@ export function resetState() {
   modalState.checkoutItens = [];
 
   modalState.comprandoDoCarrinho = false;
+
+  modalState.modo = "compra-direta";
 }

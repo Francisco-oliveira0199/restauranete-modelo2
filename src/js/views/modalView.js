@@ -4,41 +4,66 @@ function formatarPreco(valor) {
 
 export function renderConfig(nome, preco) {
   return `
-    <button class="fechar-x" id="fecharModal">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
+  <div class="modal-topo">
 
-    <div class="modal-scroll">
+  <div class="modal-topo-info">
 
-    <div class="modal-header">
-      <h2>${nome}</h2>
+    <h2>${nome}</h2>
 
-      <p id="precoTotal">
-        R$ ${formatarPreco(preco)}
-      </p>
-    </div>
+    <p class="descricao-item">
+      Hambúrguer, queijo, alface, tomate e maionese
+    </p>
+
+    <p id="precoTotal" class="preco-topo">
+      R$ ${formatarPreco(preco)}
+    </p>
+
+  </div>
+
+  <button class="fechar-x" id="fecharModal">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+</div>
+
+<div class="modal-scroll">
 
     <div class="modal-body">
 
-      <div class="secao">
-        <h3>Quantidade</h3>
+      <div class="secao quantidade-box">
 
-        <input
-          type="number"
-          id="quantidade"
-          value="1"
-          min="1"
-        >
-      </div>
+  <h3>Quantidade</h3>
+
+  <div class="controle-qtd">
+
+    <button type="button" id="menosQtd">
+      −
+    </button>
+
+    <span id="quantidadeValor">
+      1
+    </span>
+
+    <button type="button" id="maisQtd">
+      +
+    </button>
+
+  </div>
+
+</div>
 
       <div class="secao">
 
         <div id="extras"></div>
       </div>
 
-      <button class="btn" id="btnContinuar">
-        Continuar
-      </button>
+      <div class="modal-footer">
+
+  <button id="btnContinuar">
+  Continuar
+</button>
+
+</div>
       
       </div>
        </div>

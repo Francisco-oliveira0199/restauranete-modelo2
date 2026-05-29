@@ -104,100 +104,345 @@
 <h2>Pizzas</h2>
 </div>
 
-<div class="item" data-nome="Pizza margherita" data-preco="45">
-<div class="item-info">
-<h3>Margherita</h3>
-<p>Molho de tomate, mussarela e manjericão</p>
-</div>
+<div
+  class="item"
+  data-nome="Pizza Margherita"
+  data-sabor="margherita"
+  data-preco="45"
+>
 
-<div class="item-side">
-<span>R$ 45,00</span>
-<button class="btn-carrinho">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+  <div class="item-info">
 
-</div>
+    <div class="item-header">
 
+      <h3>Margherita</h3>
 
-<div class="item" data-nome="Pizza calabresa" data-preco="48">
-<div class="item-info">
-<h3>Calabresa</h3>
-<p>Molho de tomate, mussarela, calabresa e cebola</p>
-</div>
+      <span class="item-preco">
+        R$ 45,00
+      </span>
 
-<div class="item-side">
-<span>R$ 48,00</span>
-<button class="btn-carrinho">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+    </div>
 
-</div>
+    <p>
+      Molho de tomate, mussarela, manjericão e azeite
+    </p>
 
-<div class="item" data-nome="Pizza quatro queijos" data-preco="52">
-<div class="item-info">
-<h3>Quatro Queijos</h3>
-<p>Mussarela, parmesão, gorgonzola e provolone</p>
-</div>
+    <div class="item-actions">
 
-<div class="item-side">
-<span>R$ 52,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+      <button class="btn-add-carrinho">
 
-</div>
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
 
-<div class="item" data-nome="Pizza portuguesa" data-preco="50">
-<div class="item-info">
-<h3>Portuguesa</h3>
-<p>Presunto, ovos, cebola, azeitona e ervilha</p>
-</div>
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
 
-<div class="item-side">
-<span>R$ 50,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-<div class="item" data-nome="Pizza de frango com catupiry" data-preco="49">
-<div class="item-info">
-<h3>Frango com Catupiry</h3>
-<p>Frango desfiado com catupiry</p>
+<div
+  class="item"
+  data-nome="Pizza Calabresa"
+  data-sabor="calabresa"
+  data-preco="48"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Pizza Calabresa</h3>
+
+      <span class="item-preco">
+        R$ 48,00
+      </span>
+
+    </div>
+
+    <p>
+      Molho de tomate, mussarela, calabresa e cebola
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="item-side">
-<span>R$ 49,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+<div
+  class="item"
+  data-nome="Pizza Quatro Queijos"
+  data-sabor="quatro queijos"
+  data-preco="52"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Quatro Queijos</h3>
+
+      <span class="item-preco">
+        R$ 52,00
+      </span>
+
+    </div>
+
+    <p>
+      Molho de tomate, mussarela, parmesão, gorgonzola e provolone
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-<div class="item" data-nome="Pizza de pepperoni" data-preco="52">
-<div class="item-info">
-<h3>Pepperoni</h3>
-<p>Molho de tomate, mussarela e pepperoni</p>
+<div
+  class="item"
+  data-nome="Pizza Portuguesa"
+  data-sabor="portuguesa"
+  data-preco="50"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Portuguesa</h3>
+
+      <span class="item-preco">
+        R$ 50,00
+      </span>
+
+    </div>
+
+    <p>
+      Molho de tomate, presunto, ovos, cebola, azeitona e ervilha
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="item-side">
-<span>R$ 52,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
+<div
+  class="item"
+  data-nome="Pizza Portuguesa"
+  data-sabor="portuguesa"
+  data-preco="49"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Frango com Catupiry</h3>
+
+      <span class="item-preco">
+        R$ 49,00
+      </span>
+
+    </div>
+
+    <p>
+      Molho de tomate, frango desfiado e catupiry.
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
+
+<div
+  class="item"
+  data-nome="Pizza Pepperoni"
+  data-sabor="pepperoni"
+  data-preco="52"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Pepperoni</h3>
+
+      <span class="item-preco">
+        R$ 52,00
+      </span>
+
+    </div>
+
+    <p>
+      Molho de tomate, mussarela e pepperoni
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
@@ -211,99 +456,227 @@
 <h2>Pastéis</h2>
 </div>
 
-<div class="item" data-nome="Pastel de carne" data-preco="8">
-<div class="item-info">
-<h3>Pastel de Carne</h3>
-<p>Carne moída temperada</p>
-</div>
+<div
+  class="item"
+  data-nome="Pastel de Queijo"
+  data-preco="7"
+>
 
-<div class="item-side">
-<span>R$ 8,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+  <div class="item-info">
 
-</div>
+    <div class="item-header">
 
-<div class="item" data-nome="Pastel de queijo" data-preco="7">
-<div class="item-info">
-<h3>Pastel de Queijo</h3>
-<p>Mussarela derretida</p>
-</div>
+      <h3>Pastel de Queijo</h3>
 
-<div class="item-side">
-<span>R$ 7,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+      <span class="item-preco">
+        R$ 7,00
+      </span>
 
-</div>
+    </div>
 
-<div class="item" data-nome="Pastel-Pizza" data-preco="9">
-<div class="item-info">
-<h3>Pastel de Pizza</h3>
-<p>Presunto, mussarela e orégano</p>
-</div>
+    <p>
+    Mussarela derretido
+    </p>
 
-<div class="item-side">
-<span>R$ 9,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+    <div class="item-actions">
 
-</div>
+      <button class="btn-add-carrinho">
 
-<div class="item" data-nome="Pastel de frango com catupiry" data-preco="10">
-<div class="item-info">
-<h3>Pastel de Frango</h3>
-<p>Frango desfiado com catupiry</p>
-</div>
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
 
-<div class="item-side">
-<span>R$ 10,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-<div class="item" data-nome="Pastel de palmito" data-preco="11">
-<div class="item-info">
-<h3>Pastel de Palmito</h3>
-<p>Palmito e mussarela</p>
+<div
+  class="item"
+  data-nome="Pastel de Frango"
+  data-preco="10"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Pastel de Frango</h3>
+
+      <span class="item-preco">
+        R$ 10,00
+      </span>
+
+    </div>
+
+    <p>
+      Frango desfiado
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="item-side">
-<span>R$ 11,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+<div
+  class="item"
+  data-nome="Pastel de Palmito"
+  data-preco="11"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Pastel de Palmito</h3>
+
+      <span class="item-preco">
+        R$ 11,00
+      </span>
+
+    </div>
+
+    <p>
+      Palmito e mussarela
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-<div class="item" data-nome="Pastel de carne com queijo" data-preco="10">
-<div class="item-info">
-<h3>Pastel de Carne com Queijo</h3>
-<p>Carne moída temperada com mussarela</p>
-</div>
+<div
+  class="item"
+  data-nome="Pastel de Misto"
+  data-preco="9"
+>
 
-<div class="item-side">
-<span>R$ 10,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-    Adicionar
-  </button>
-</div>
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Pastel de Misto</h3>
+
+      <span class="item-preco">
+        R$ 9,00
+      </span>
+
+    </div>
+
+    <p>
+    Mussarela e presunto
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
@@ -317,100 +690,341 @@
 <h2>Hambúrgueres</h2>
 </div>
 
-<div class="item" data-nome="X-Burger" data-preco="20">
-<div class="item-info">
-<h3>X-Burger</h3>
-<p>Hambúrguer, queijo, alface, pão, tomate e maionese</p>
-</div>
+<div
+  class="item"
+  data-nome="X-Burger"
+  data-preco="20"
+>
 
-<div class="item-side">
-  <span>R$ 20,00</span>
-<button class="btn-carrinho">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+  <div class="item-info">
 
-</div>
+    <div class="item-header">
 
-<div class="item" data-nome="X-Salada" data-preco="28">
-<div class="item-info">
-<h3>X-Salada</h3>
-<p>Hambúrguer, queijo, presunto, alface, tomate e milho</p>
-</div>
+      <h3>X-Burger</h3>
 
-<div class="item-side">
-  <span>R$ 28,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+      <span class="item-preco">
+        R$ 20,00
+      </span>
 
-</div>
+    </div>
 
-<div class="item" data-nome="X-Bacon" data-preco="32">
-<div class="item-info">
-<h3>X-Bacon</h3>
-<p>Hambúrguer, queijo, bacon crocante e molho especial</p>
-</div>
+    <p>
+      Hambúrguer, queijo, alface, pão, tomate e maionese
+    </p>
 
-<div class="item-side">
-  <span>R$ 32,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+    <div class="item-actions">
 
-</div>
+      <button class="btn-add-carrinho">
 
-<div class="item" data-nome="X-Egg" data-preco="30">
-<div class="item-info">
-<h3>X-Egg</h3>
-<p>Hambúrguer, queijo, ovo, bacon e maionese</p>
-</div>
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
 
-<div class="item-side">
-<span>R$ 30,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
-</div>
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
 
-<div class="item" data-nome="X-Tudo" data-preco="38">
-<div class="item-info">
-<h3>X-Tudo</h3>
-<p>Duplo hambúrguer, queijo, bacon, ovo, calabresa e salada</p>
-</div>
+        </svg>
 
-<div class="item-side">
-  <span>R$ 38,00</span>
-  <button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
-</div>
+        <span>Adicionar ao carrinho</span>
 
-<div class="item" data-nome="Smash Burguer" data-preco="35">
-<div class="item-info">
-<h3>Smash Burguer</h3>
-<p>Duplo smash, queijo cheddar, cebola caramelizada e molho</p>
-</div>
+      </button>
 
-<div class="item-side">
-<span>R$ 35,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
+<div
+  class="item"
+  data-nome="X-Salada"
+  data-preco="28"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>X-Salada</h3>
+
+      <span class="item-preco">
+        R$ 28,00
+      </span>
+
+    </div>
+
+    <p>
+     Hambúrguer, queijo, presunto, alface, tomate e milho
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  class="item"
+  data-nome="X-Bacon"
+  data-preco="28"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>X-Bacon</h3>
+
+      <span class="item-preco">
+        R$ 28,00
+      </span>
+
+    </div>
+
+    <p>
+     Hambúrguer, queijo, presunto, alface, tomate e milho
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  class="item"
+  data-nome="X-Egg"
+  data-preco="30"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>X-Egg</h3>
+
+      <span class="item-preco">
+        R$ 30,00
+      </span>
+
+    </div>
+
+    <p>
+     Hambúrguer, queijo, ovo, bacon e maionese
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  class="item"
+  data-nome="X-Tudo"
+  data-preco="38"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>X-Tudo</h3>
+
+      <span class="item-preco">
+        R$ 38,00
+      </span>
+
+    </div>
+
+    <p>
+     Duplo hambúrguer, queijo, bacon, ovo, calabresa e salada
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  class="item"
+  data-nome="X-Tudo"
+  data-preco="35"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Smash Burguer</h3>
+
+      <span class="item-preco">
+        R$ 35,00
+      </span>
+
+    </div>
+
+    <p>
+     Duplo smash, queijo cheddar, cebola caramelizada e molho especial
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
 
 </div>
 
@@ -422,83 +1036,283 @@
 <h2>Sucos</h2>
 </div>
 
-<div class="item" data-nome="Suco de laranja" data-preco="8">
-<div class="item-info">
-<h3>Suco de Laranja</h3>
-<p>Suco natural de laranja - 500ml</p>
-</div>
+<div
+  class="item"
+  data-nome="Suco de Laranja"
+  data-preco="8"
+>
 
-<div class="item-side">
-<span>R$ 8,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+  <div class="item-info">
 
-</div>
+    <div class="item-header">
 
-<div class="item" data-nome="Suco de limão" data-preco="8">
-<div class="item-info">
-<h3>Suco de Limão</h3>
-<p>Suco natural de limão - 500ml</p>
-</div>
+      <h3>Suco de Laranja</h3>
 
-<div class="item-side">
-<span>R$ 8,00</span>
-<button class="btn-carrinho">
- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+      <span class="item-preco">
+        R$ 8,00
+      </span>
 
-</div>
+    </div>
 
-<div class="item" data-nome="Suco de maracuja" data-preco="8">
-<div class="item-info">
-<h3>Suco de Maracujá</h3>
-<p>Suco natural de maracujá - 500ml</p>
-</div>
+    <p>
+      Suco natural de laranja - 500ml
+    </p>
 
-<div class="item-side">
-  <span>R$ 8,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+    <div class="item-actions">
 
-</div>
+      <button class="btn-add-carrinho">
 
-<div class="item" data-nome="Suco de abacaxi" data-preco="8">
-<div class="item-info">
-<h3>Suco de Abacaxi</h3>
-<p>Suco natural de abacaxi - 500ml</p>
-</div>
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
 
-<div class="item-side">
-<span>R$ 8,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-<div class="item" data-nome="Suco de melancia" data-preco="8">
-<div class="item-info">
-<h3>Suco de Melancia</h3>
-<p>Suco natural de melancia - 500ml</p>
+<div
+  class="item"
+  data-nome="Suco de Limão"
+  data-preco="8"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Suco de Limão</h3>
+
+      <span class="item-preco">
+        R$ 8,00
+      </span>
+
+    </div>
+
+    <p>
+      Suco natural de limão - 500ml
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="item-side">
-<span>R$ 8,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
+<div
+  class="item"
+  data-nome="Suco de maracujá"
+  data-preco="8"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Suco de Maracujá</h3>
+
+      <span class="item-preco">
+        R$ 8,00
+      </span>
+
+    </div>
+
+    <p>
+      Suco natural de maracujá - 500ml
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
+
+<div
+  class="item"
+  data-nome="Suco de Abacaxi"
+  data-preco="8"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Suco de Abacaxi</h3>
+
+      <span class="item-preco">
+        R$ 8,00
+      </span>
+
+    </div>
+
+    <p>
+      Suco natural de abacaxi - 500ml
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  class="item"
+  data-nome="Suco de Melancia"
+  data-preco="8"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Suco de Melancia</h3>
+
+      <span class="item-preco">
+        R$ 8,00
+      </span>
+
+    </div>
+
+    <p>
+      Suco natural de Melancia - 500ml
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
@@ -512,87 +1326,286 @@
 <h2>Bebidas</h2>
 </div>
 
-<div class="item" data-nome="Coca-Cola lata" data-preco="6">
-<div class="item-info">
-<h3>Coca-Cola Lata</h3>
-<p>350ml</p>
-</div>
+<div
+  class="item"
+  data-nome="Coca-Cola Lata"
+  data-preco="6"
+>
 
-<div class="item-side">
-  <span>R$ 6,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+  <div class="item-info">
 
-</div>
+    <div class="item-header">
 
-<div class="item" data-nome="Coca-Cola 1L" data-preco="10">
-<div class="item-info">
-<h3>Coca-Cola</h3>
-<p>1 Litro</p>
-</div>
-<div class="item-side">
-  <span>R$ 10,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+      <h3>Coca-Cola Lata</h3>
 
-</div>
+      <span class="item-preco">
+        R$ 6,00
+      </span>
 
-<div class="item" data-nome="Guaraná Antartica lata" data-preco="6">
-<div class="item-info">
-<h3>Guaraná Antartica Lata</h3>
-<p>350ml</p>
-</div>
+    </div>
 
-<div class="item-side">
-  <span>R$ 6,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+    <p>
+      350ml
+    </p>
 
-</div>
+    <div class="item-actions">
 
-<div class="item" data-nome="Fanta laranja" data-preco="6">
-<div class="item-info">
-<h3>Fanta Laranja</h3>
-<p>350ml</p>
-</div>
+      <button class="btn-add-carrinho">
 
-<div class="item-side">
-<span>R$ 6,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-<div class="item" data-nome="Agua mineral" data-preco="4">
-<div class="item-info">
-<h3>Água Mineral</h3>
-<p>500ml</p>
-</div>
-<div class="item-side">
-  <span>R$ 4,00</span>
-<button class="btn-carrinho">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-  Adicionar
-</button>
-</div>
+<div
+  class="item"
+  data-nome="Coca-Cola 1L"
+  data-preco="10"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Coca-Cola</h3>
+
+      <span class="item-preco">
+        R$ 10,00
+      </span>
+
+    </div>
+
+    <p>
+      1L
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
 
-</div>
+<div
+  class="item"
+  data-nome="Guaraná Antartica Lata"
+  data-preco="6"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Guaraná Antartica Lata</h3>
+
+      <span class="item-preco">
+        R$ 6,00
+      </span>
+
+    </div>
+
+    <p>
+      350ml
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
 
 </div>
+
+<div
+  class="item"
+  data-nome="Fanta Laranja"
+  data-preco="6"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Fanta Laranja</h3>
+
+      <span class="item-preco">
+        R$ 6,00
+      </span>
+
+    </div>
+
+    <p>
+      350ml
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div
+  class="item"
+  data-nome="Água Mineral"
+  data-preco="4"
+>
+
+  <div class="item-info">
+
+    <div class="item-header">
+
+      <h3>Água Mineral</h3>
+
+      <span class="item-preco">
+        R$ 4,00
+      </span>
+
+    </div>
+
+    <p>
+      500ml
+    </p>
+
+    <div class="item-actions">
+
+      <button class="btn-add-carrinho">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+
+          <circle cx="8" cy="21" r="1"/>
+          <circle cx="19" cy="21" r="1"/>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+
+        </svg>
+
+        <span>Adicionar ao carrinho</span>
+
+      </button>
+
+      <button class="btn-comprar">
+        Comprar
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
 </div>
 
 </main>

@@ -102,24 +102,159 @@ html {
 }
 
 /* ================= ITEM ================= */
+
+.item-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    width: 100%;
+}
+
 .item {
-    display: grid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    /* 2 colunas: esquerda (flexível) + direita (conteúdo) */
-    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 18px;
 
-    /* 2 linhas reais (ESSENCIAL pro alinhamento correto) */
-    grid-template-rows: auto auto;
+    border-radius: 18px;
 
-    gap: 6px 10px;
+    background: white;
 
-    background: var(--white);
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 12px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    margin-bottom: 14px;
 
-    align-items: start;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.item-info {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
+}
+
+.item-info h3 {
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: var(--text-dark);
+
+    margin: 0;
+}
+
+.item-info p {
+    font-size: 13px;
+    color: var(--text-medium);
+
+    margin-top: 4px;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 14px;
+}
+
+.item-preco {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: var(--primary-color);
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+
+    margin-left: auto;
+}
+
+/* BOTÃO CARRINHO */
+
+.btn-add-carrinho {
+    height: 44px;
+
+    padding: 0 14px;
+
+    border-radius: 14px;
+
+    border: 2px solid var(--primary-color);
+
+    background: white;
+
+    color: var(--primary-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    transition:
+    background .2s,
+    transform .2s,
+    box-shadow .2s;
+}
+
+.btn-add-carrinho span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-add-carrinho:hover {
+    background: #fff7e8;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.18);
+}
+
+/* BOTÃO COMPRAR */
+
+.btn-comprar {
+    height: 44px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: var(--primary-color);
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+    background .2s,
+    transform .2s,
+    box-shadow .2s;
+}
+
+.btn-comprar:hover {
+    background: #e08c00;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 16px rgba(245, 158, 11, 0.25);
 }
 
 /* ================= ESQUERDA ================= */
@@ -143,8 +278,13 @@ html {
     grid-row: 2;
 }
 
-.item-info:hover {
-    opacity: 0.8;
+.item {
+    transition: none;
+}
+
+.item:hover {
+    background: white;
+    transform: none;
 }
 
 .item-side {
